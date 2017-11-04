@@ -19,5 +19,5 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^findPatterns', views.myTestView)
+    url(r'^webhook', views.myTestView)
 ]
