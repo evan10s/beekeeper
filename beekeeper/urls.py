@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/add/treatment', views.addTreatment)
+    url(r'^api/add/treatment', views.addTreatment),
+    url(r'^api/getPattern',views.findPattern)
 ]

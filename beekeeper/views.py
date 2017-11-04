@@ -24,3 +24,23 @@ def addTreatment(request):
 
         return HttpResponse(json.dumps({'carbs':3}),content_type="application/json")
     return HttpResponseForbidden("403 Forbidden")
+
+@csrf_exempt
+def findPattern(request):
+    return HttpResponse(json.dumps({ "type": "High",
+        "data": [ {
+            "day": "Monday",
+            "bg": 189
+        },  {
+            "day": "Tuesday",
+            "bg": 170 }
+        ]
+    }), content_type="application/json")
+    # highPattern = findHighPattern(meal)
+
+def findHighPattern(meal):
+    Treatment.objects.filter()
+    pass
+
+def findLowPattern(meal):
+    pass
