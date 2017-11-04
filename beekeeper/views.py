@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import decimal
 from .models import Treatment
+import datetime;
 
 @csrf_exempt
 def addTreatment(request):
@@ -15,8 +16,9 @@ def addTreatment(request):
         dose_entered = decimal.Decimal(request.POST['dose'])
         meal_entered = request.POST['meal']
         carbs_entered = int(request.POST['carbs'])
+        
         #treat = Treatment(bg=4,owner=re)
-        treat = Treatment(bg=bg_entered,meal=meal_entered,dose=dose_entered,carbs=carbs_entered)
+        treat = Treatment(bg=bg_entered,meal=meal_entered,dose=dose_entered,carbs=carbs_entered,timestamp=datetime.datetime.now())
         treat.save()
 
         print("type carbs")
