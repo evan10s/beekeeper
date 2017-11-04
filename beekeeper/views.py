@@ -10,5 +10,5 @@ def myTestView(request):
         #Treatment.objects.get(bg.__gte__="70")
         #print(request.POST.get('lang',0))
         #return HttpResponse(json.dumps({'speech': 'Hi there', "displayText": "Hi there!"}),content_type="text/json")
-        return HttpResponse(json.dumps({'displayText':request.body.result.action, 'speech':"It worked"}))
+        return HttpResponse(json.dumps({'displayText':request.body["result"]["action"], 'speech':"It worked"}))
     return HttpResponseForbidden("403 Forbidden")
